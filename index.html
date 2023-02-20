@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + TS</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <img src="" alt="logo for site">
+          </li>
+          <li>
+          <a href="https://github.com/Sonja-Kitanoska">Github</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-container" id="main">
+      <div class="main-container__input">
+        <img src="" alt="magnifying-glass">
+        <input type="search" placeholder="Search" id="search-bar" class="main-container__input">
+        <button id="search-btn">Search</button>
+      </div>
+      <div class="main-container__images" id="main-container__images"></div> 
+      <div class="main-container__buttons">
+        <button class="main-container__buttons__btn" id="prev-btn">Prev</button>
+        <button class="main-container__buttons__btn" id="next-btn">Next</button>
+      </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
+ 

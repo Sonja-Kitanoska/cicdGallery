@@ -1,23 +1,30 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import { setupCounter } from './counter'
+console.log(import.meta.env.VITE_SECRET_KEY)
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const add = (a :number , b : number) => a+b
+const state : string[] = [];
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+type Photo = {
+  urls: { small:string }, 
+  alt_description: string
+};
+
+const fetchData = async () => {
+  const searchbar : HTMLInputElement = document.querySelector('#search-bar')!
+  const search = searchbar.value;
+
+  const photos = await fetch(`https://api.unsplash.com/search/photos?query=${search}&client_id=${import.meta.env.VITE_ACCESS_KEY}`);
+  const data = await photos.json();
+  data.results.forEach((photo: Photo) => {
+    document.querySelector('#main-container__images')!.innerHTML += `
+    <img class="main-containter__photo" src="${photo.urls.small}" alt="${photo.alt_description}">
+    `
+  });
+  state.unshift(search)
+  window.localStorage.setItem('searchKey', state.toString());
+
+  console.log(data)
+}
+
+document.querySelector("#search-btn")?.addEventListener('click', fetchData);
+
+export { add } 
