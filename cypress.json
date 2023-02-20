@@ -1,0 +1,6 @@
+{
+    "integrationFolder": "e2e",
+    "fileServerFolder": "src",
+    "screenshotOnRunFailure": false,
+    "video": false
+}
