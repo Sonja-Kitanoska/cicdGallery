@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest --jest.config.json",
+    "test": "npx jest --jest.config.json",
     "cypress": "cypress open",
     "e2e": "cypress run",
     "lint": "npx eslint ./src/*.ts"
