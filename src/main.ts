@@ -67,4 +67,4 @@ document.querySelector('#next-btn')?.addEventListener('click', () => {
   document.querySelector('#prev-btn')?.classList.remove('hidden');
 });
 
-export { add };
+export default { add };
