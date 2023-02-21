@@ -67,4 +67,5 @@ document.querySelector('#next-btn')?.addEventListener('click', () => {
   document.querySelector('#prev-btn')?.classList.remove('hidden');
 });
 
-export default { add };
+// eslint-disable-next-line import/prefer-default-export
+export { add };
