@@ -169,7 +169,7 @@ button {
 }
 
 .flip-card-back {
-  background-color: rgb(178,196,204);
+  background-color: rgb(178,196,203);
   color: white;
   transform: rotateY(180deg);
 }
