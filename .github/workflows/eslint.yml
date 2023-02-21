@@ -11,7 +11,7 @@ name: ESLint
 
 on:
   push:
-    branches: [ "development" ]
+    branches: [ "main" ]
 
 jobs:
   eslint:
