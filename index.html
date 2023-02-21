@@ -10,11 +10,11 @@
   <body>
     <header class ="header-container">
       <nav class="nav-container">
-        <ul>
+        <ul class="nav-container__ul">
           <li>
-            <img src="" alt="logo for site">
+            <img class="nav-container__logo" src="https://img.logoipsum.com/268.svg" alt="logo for site">
           </li>
-          <li>
+          <li class="nav-container__github">
           <a href="https://github.com/Sonja-Kitanoska">Github</a>
           </li>
         </ul>
@@ -22,14 +22,21 @@
     </header>
     <main class="main-container" id="main">
       <div class="main-container__input">
-        <img class="main-container__magnifying-glass" src="" alt="">
-        <input type="search" placeholder="Search" id="search-bar" class="main-container__input">
-        <button id="search-btn">Search</button>
+        <div class="input-container">
+          <div class="input-container__inner">
+            <input class="main-container__searchbar" type="search" placeholder="Search" id="search-bar">
+            <button class="main-container__buttons__btn" main-container__buttons__btn id="search-btn">Search</button>
+          </div>
+          <div id="input-container__outer">
+            <div class="input-container__outer-dropdown"></div>
+            <ul class="input-container__ul" id="ul-element"></ul>
+          </div>
+        </div>
       </div>
       <div class="main-container__images" id="main-container__images"></div> 
       <div class="main-container__buttons">
-        <button class="main-container__buttons__btn" id="prev-btn">Prev</button>
-        <button class="main-container__buttons__btn" id="next-btn">Next</button>
+        <button class="main-container__buttons__btn hidden" id="prev-btn">Prev</button>
+        <button class="main-container__buttons__btn hidden" id="next-btn">Next</button>
       </div>
     </main>
     <script type="module" src="/src/main.ts"></script>
