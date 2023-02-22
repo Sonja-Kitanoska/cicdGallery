@@ -192,3 +192,18 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+@media only screen and (max-width: 380px) {
+  .main-container {
+    padding: 0 15px;
+  }
+  .main-container__images {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .input-container__inner {
+    margin-bottom: 15px;
+  }
+
+}

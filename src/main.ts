@@ -38,11 +38,16 @@ const renderSearchResults = (localStorageData: string[]) => {
     `;
   });
   if (state.length !== 0) {
+    document.querySelector('#input-container__outer')!.style.display = 'flex';
     document.querySelector('#input-container__outer')!.classList.add('input-container__outer');
   }
 };
 document.querySelector('#search-bar')?.addEventListener('click', () => {
   renderSearchResults(state);
+  document.querySelector('#input-container__outer')!.classList.remove('hidden');
+});
+document.querySelector('#search-bar')?.addEventListener('blur', () => {
+  document.querySelector('#input-container__outer')!.classList.add('hidden');
 });
 
 document.onkeydown = event => {
@@ -51,6 +56,7 @@ document.onkeydown = event => {
   const search = searchbar.value;
   if (event.key === 'Enter') {
     if (search) {
+      document.querySelector('#input-container__outer')!.classList.add('hidden');
       fetchData();
       setTimeout(() => { document.querySelector('#next-btn')?.classList.remove('hidden'); }, 500);
     }
@@ -59,8 +65,13 @@ document.onkeydown = event => {
 
 document.querySelector('#search-btn')?.addEventListener('click', () => {
   count = 1;
-  fetchData();
-  setTimeout(() => { document.querySelector('#next-btn')?.classList.remove('hidden'); }, 500);
+  const searchbar : HTMLInputElement = document.querySelector('#search-bar')!;
+  const search = searchbar.value;
+  if (search) {
+    document.querySelector('#input-container__outer')!.classList.add('hidden');
+    fetchData();
+    setTimeout(() => { document.querySelector('#next-btn')?.classList.remove('hidden'); }, 500);
+  }
 });
 
 document.querySelector('#prev-btn')?.addEventListener('click', () => {
@@ -77,16 +88,5 @@ document.querySelector('#next-btn')?.addEventListener('click', () => {
   fetchData();
   document.querySelector('#prev-btn')?.classList.remove('hidden');
 });
-
-// function clickBody() {
-//   const target = document.querySelector('#input-container__outer');
-//   if (target?.classList.contains('.input-container__outer')) {
-//     window.location.href = '/';
-//     console.log('hidden');
-//     target.classList.remove('.input-container__outer');
-//   }
-// }
-
-// document.body.addEventListener('click', clickBody);
 
 export {};
