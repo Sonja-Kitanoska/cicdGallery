@@ -1,4 +1,3 @@
-const add = (a :number, b : number) => a + b;
 const state : string[] = [];
 let count: number = 1;
 type Photo = {
@@ -67,5 +66,4 @@ document.querySelector('#next-btn')?.addEventListener('click', () => {
   document.querySelector('#prev-btn')?.classList.remove('hidden');
 });
 
-// eslint-disable-next-line import/prefer-default-export
-export { add };
+export {};
