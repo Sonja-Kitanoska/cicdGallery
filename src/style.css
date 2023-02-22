@@ -193,7 +193,28 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media only screen and (max-width: 380px) {
+input[type=text] {
+  padding-left: 25px;
+}
+
+@media only screen and (max-width: 1225px) {
+  .main-container {
+    padding: 0 50px;
+  }
+  .header-container {
+    padding-inline: 50px;
+  }
+  .main-container__images {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .input-container__inner {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
   .main-container {
     padding: 0 15px;
   }
@@ -205,5 +226,10 @@ button:focus-visible {
   .input-container__inner {
     margin-bottom: 15px;
   }
-
+  .header-container {
+    padding-inline: 15px;
+  }
+  .input-container__inner {
+    width: 100%
+  }
 }
