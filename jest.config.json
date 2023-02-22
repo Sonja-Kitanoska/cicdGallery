@@ -1,0 +1,10 @@
+{
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/config",
+      "src/__tests__/e2e/e2e-types.d.ts"
+    ]
+}
+

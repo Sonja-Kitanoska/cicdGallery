@@ -6,10 +6,34 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "start": "http-server dist --port 5173",
+
+    "preview": "vite preview",
+    "test": "npx jest --jest.config.json",
+    "cypress": "cypress open",
+    "e2e": "cypress run",
+    "cy:run": "cypress run",
+    "ci:test": "start-server-and-test start http://localhost:5173 cy:run",
+    "lint": "npx eslint ./src/*.ts"
   },
   "devDependencies": {
-    "typescript": "^4.9.3",
+    "@tsconfig/node16": "^1.0.3",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^18.14.0",
+    "cypress": "^12.6.0",
+    "dotenv": "^16.0.3",
+    "eslint-config-salt-typescript": "^1.0.0",
+    "eslint-plugin-cypress": "^2.12.1",
+    "http-server": "^14.1.1",
+    "jsdom": "^21.1.0",
+    "start-server-and-test": "^1.15.4",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5",
     "vite": "^4.1.0"
+  },
+  "dependencies": {
+    "@jest/globals": "^29.4.3",
+    "node-fetch": "^3.3.0"
   }
 }

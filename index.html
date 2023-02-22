@@ -2,12 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Blessed Gallery</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class ="header-container">
+      <nav class="nav-container">
+        <ul class="nav-container__ul">
+          <li>
+            <img class="nav-container__logo" src="./src/Bless_logo.png" alt="logo for site">
+          </li>
+          <li class="nav-container__github">
+          <a href="https://github.com/Sonja-Kitanoska">Github</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-container" id="main">
+      <div class="main-container__input">
+        <div class="input-container">
+          <div class="input-container__inner">
+            <input class="main-container__searchbar" type="search" placeholder="Search..." id="search-bar">
+            <button class="main-container__buttons__btn" main-container__buttons__btn id="search-btn">Go</button>
+          </div>
+          <div id="input-container__outer">
+            <ul class="input-container__ul" id="ul-element"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="main-container__images" id="main-container__images"></div> 
+      <div class="main-container__buttons">
+        <button class="main-container__buttons__btn hidden" id="prev-btn">Prev</button>
+        <button class="main-container__buttons__btn hidden" id="next-btn">Next</button>
+      </div>
+    </main>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
+ 
