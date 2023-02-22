@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -23,6 +25,10 @@ ul {
   height: 50px;
 }
 
+a {
+  text-decoration: none;
+  color: #a8cc2f;
+}
 .nav-container__github {
   align-self: center;
 }
@@ -31,7 +37,7 @@ ul {
   position: sticky;
   padding-top: 30px;
   padding-bottom: 30px;
-  background: rgb(178, 196, 204);
+  background: #1c1a1c;
   padding-inline: 100px;
 }
 
@@ -92,7 +98,7 @@ ul {
   padding-bottom: 10px;
   border-radius: 5px;
   text-align: center;
-  box-shadow: 0 0 20px rgb(178, 196, 204);
+  box-shadow: 0 0 20px #3c9e1c;
   width: 10%;
   z-index: 99;
   background-color: #fff;
@@ -117,8 +123,8 @@ ul {
 .main-container__buttons__btn {
   height: 35px;
   width: 70px;
-  color: white;
-  background: rgb(147, 177, 191);
+  color: #a8cc2f;
+  background: #1c1a1c;
   border: none;
   border-radius: 5px;
 }
@@ -129,8 +135,13 @@ ul {
 
 button {
   cursor: pointer;
+  font-family: inherit;
 }
 
+#prev-btn, #next-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 .flip-card {
   background-color: transparent;
@@ -169,29 +180,15 @@ button {
 }
 
 .flip-card-back {
-  background-color: rgb(178,196,204);
-  color: white;
+  background-color: #1c1a1c;
+  color: #a8cc2f;
   transform: rotateY(180deg);
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cfe;
+  border-color: #a8cc2f;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-
 }
