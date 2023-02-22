@@ -21,7 +21,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5 # use the explicit version number
         with:
-          build: npm run e2e
+          build: npm run build
     
   automerge:
     runs-on: ubuntu-latest
