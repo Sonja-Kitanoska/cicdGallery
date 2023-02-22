@@ -38,7 +38,6 @@ const renderSearchResults = (localStorageData: string[]) => {
     `;
   });
   if (state.length !== 0) {
-    document.querySelector('#input-container__outer')!.style.display = 'flex';
     document.querySelector('#input-container__outer')!.classList.add('input-container__outer');
   }
 };
